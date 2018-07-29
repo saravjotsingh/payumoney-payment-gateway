@@ -1,0 +1,51 @@
+// Created by Venkat on 30-06-2014.
+html
+    head
+        script(src='http://code.jquery.com/jquery-1.11.1.min.js')
+        script(src='/public/js/payment.js')
+    body
+        h2 PayU Form
+        br
+        form(action='https://sandboxsecure.payu.in/_payment', method='post', name='payuForm')
+            input(type='hidden', name='key', value='dLMwEK9f')
+            input(type='hidden', name='hash', value='')
+            input(type='hidden', name='txnid', value='4403')
+            table
+                tr
+                    td
+                        b Mandatory Parameters
+                tr
+                    td Amount:
+                    td
+                        input(name='amount', value='')
+                    td First Name:
+                    td
+                        input#firstname(name='firstname', value='')
+                tr
+                    td Email:
+                    td
+                        input#email(name='email', value='')
+                    td Phone:
+                    td
+                        input(name='phone', value='')
+                tr
+                    td Product Info:
+                    td(colspan='3')
+                        textarea(name='productinfo')
+                tr
+                    td Success URI:
+                    td(colspan='3')
+                        input(name='surl', value='', size='64')
+                tr
+                    td Failure URI:
+                    td(colspan='3')
+                        input(name='furl', value='', size='64')
+                tr
+                    td Service Provider:
+                    td(colspan='3')
+                        input(name='service_provider', value='payu_paisa', size='64')
+                tr
+                    td
+
+                    td(colspan='4')
+                        input(type='submit', value='Submit')
